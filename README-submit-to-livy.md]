@@ -1,0 +1,30 @@
+{
+    "file": "hdfs:///user/user/apps/hello-spark-0.0.1.jar",
+    "className": "acme.hello_spark.Grep",
+    "args": ["input/1.txt", "[Mm]agic"],
+    "jars": [
+       "hdfs:///user/user/jars/log4j-api-2.7.jar",
+       "hdfs:///user/user/jars/log4j-core-2.7.jar"
+    ],
+    "driverMemory": "1g", 
+    "executorMemory": "1g",
+    "executorCores": 2, 
+    "numExecutors": 2
+}
+
+
+
+SUBMIT
+curl -d @app.json -H 'Content-Type: application/json' -X POST http://hadoop.example.net:8998/batches
+
+
+EXEMPLO2
+curl -d @app.json -H 'Content-Type: application/json' -X POST http://hadoop.example.net:8998/batches?doAs=someone
+
+EXEMPLO3
+curl http://hadoop.example.net:8998/batches
+
+exemplo4
+
+curl http://hadoop.example.net:8998/batches/17/log
+
